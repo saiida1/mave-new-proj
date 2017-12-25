@@ -1,6 +1,6 @@
 node {
   def server = Artifactory.server 'artifactserver.jfrog.io'
-  def myMavenContainer = docker.image('maven::3.2-jdk-7')
+  def myMavenContainer = docker.image('maven:3.2-jdk-7')
   myMavenContainer.pull()
   stage('prep') {
     checkout scm
