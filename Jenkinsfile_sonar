@@ -19,7 +19,7 @@ node {
     def uploadSpec = """{
       "files": [
         {
-          "pattern": "complete/target/gs-maven-0.1.0.jar",
+          "pattern": "target/gs-maven-0.1.0.jar",
           "target": "libs-release/chanpreet/first-artifact.jar"
         }
      ]
