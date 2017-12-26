@@ -20,7 +20,7 @@ node {
       "files": [
         {
           "pattern": "target/gs-maven-0.1.0.jar",
-          "target": "libs-release/chanpreet/first-artifact.jar"
+          "target": "libs-release/chanpreet_new/first-artifact.jar"
         }
      ]
     }"""
