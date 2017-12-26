@@ -35,4 +35,4 @@ stage('sonar-scanner') {
     }
 }
 
-}
+
