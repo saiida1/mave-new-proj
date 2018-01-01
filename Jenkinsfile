@@ -1,6 +1,7 @@
+
 node {
 
-def maven.container == docker.image('maven')
+def maven.container = docker.image('maven:3.2-jdk-7')
 
 maven.container.pull()
 
@@ -12,7 +13,7 @@ checkout scm
 
 stage('compile') { 
 
-maven.container.inside("-v ) {
+maven.container.inside("-w /usr/src/mymaven" ) {
 
 sh 'mvn compile'
 
@@ -20,7 +21,7 @@ sh 'mvn compile'
 
 stage('package') { 
 
-maven.container.inside("-v ) {
+maven.container.inside("-w /usr/src/mymaven" ) {
 
 sh 'mvn package'
 
