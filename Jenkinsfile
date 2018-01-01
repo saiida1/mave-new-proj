@@ -1,6 +1,6 @@
 
 node {
-
+docker.withRegistry('https://index.docker.io/v1/', 'dockerhub')
 def myTestContainer = docker.image('maven:3.2-jdk-7')
 
 myTestContainer.pull()
