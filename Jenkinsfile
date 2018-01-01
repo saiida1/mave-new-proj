@@ -18,6 +18,7 @@ myTestContainer.inside("-w /usr/src/mymaven" ) {
 sh 'mvn compile'
 
 }
+}
 
 stage('package') { 
 
@@ -25,6 +26,7 @@ myTestContainer.inside("-w /usr/src/mymaven" ) {
 
 sh 'mvn package'
 
+}
 }
 
 
@@ -34,7 +36,7 @@ maven(mavenInstallationName: 'maven') {
 
 sh 'compile' }
 
-
+}
 stage('packages') {
 
 sh 'docker run -it --rm -w /usr/src/mymaven maven:3.2-jdk-7 mvn package'
