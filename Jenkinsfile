@@ -43,5 +43,10 @@ sh 'docker run -it --rm -w /usr/src/mymaven maven:3.2-jdk-7 mvn package'
 
 }
 
+  stage('docker build/push') {            
+     docker.withRegistry('https://index.docker.io/v1/', 'dockerhub') {
+def app = docker.build("chanpreet88/jenkinsfile-demo", '.').push()
+     }
+  }
 
 }
