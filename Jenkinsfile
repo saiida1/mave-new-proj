@@ -30,9 +30,9 @@ sh 'mvn package'
 
 
 
-stage('packages') {
-
-sh 'docker run --rm -w /usr/src/mymaven maven:3.2-jdk-7 mvn package'
+stage('publish') {
+docker.withRegistry('http://index.docker.io/v1', 'dockerhub')
+ def app = docker.build('chanpreet88/test1/', '.').push()
 
 }
 
